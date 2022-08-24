@@ -1,1 +1,1 @@
-# -ansible-automation-platform-continous-delivery-demo
+# ansible-automation-platform-continous-delivery-demo
