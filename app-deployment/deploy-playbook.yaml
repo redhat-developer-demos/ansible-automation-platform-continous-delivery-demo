@@ -14,26 +14,26 @@
   - name: Get a list of all pods from any namespace
     kubernetes.core.k8s_info:
       kind: Pod
-      namespace: ansible-automation-platform
+      namespace: dev-game-app
     register: pod_list
 
 
   - name: create k8s pod
     kubernetes.core.k8s:
       src: deployment.yaml
-      namespace: ansible-automation-platform
+      namespace: dev-game-app
       state: present
 
 
   - name: create services
     kubernetes.core.k8s:
       src: service.yaml
-      namespace: ansible-automation-platform
+      namespace: dev-game-app
       state: present
 
      
   - name: create route
     kubernetes.core.k8s:
       src: route.yaml
-      namespace: ansible-automation-platform
+      namespace: dev-game-app
       state: present
