@@ -25,7 +25,11 @@ oc get secret $SA_SECRET -o json | jq '.data["ca.crt"]' | xargs | base64 --decod
 
 
 ------------------Name of componants in AAP---------
+
+
 -Instance Groups
+
+
 name: dev-container-group
 \\\\\\
 dev-game-app
