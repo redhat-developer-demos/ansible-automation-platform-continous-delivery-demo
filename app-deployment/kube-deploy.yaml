@@ -1,0 +1,33 @@
+---
+
+- hosts: localhost
+
+  collections:
+  - kubernetes.core
+
+  tasks:
+
+  - name: dependancy
+    shell: "pip3 install openshift pyyaml kubernetes; ansible-galaxy collection install kubernetes.core"
+
+
+  - name: Get a list of all pods from any namespace
+    kubernetes.core.k8s_info:
+      kind: Pod
+      namespace: dev-game-app
+    register: pod_list
+
+
+  - name: create k8s pod
+    kubernetes.core.k8s:
+      src: deployment.yaml
+      namespace: dev-game-app
+      state: present
+
+
+  - name: create services
+    kubernetes.core.k8s:
+      src: service.yaml
+      namespace: dev-game-app
+      state: present
+
