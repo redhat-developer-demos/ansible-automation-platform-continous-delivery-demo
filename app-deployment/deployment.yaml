@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: racing-game
-        image: dev-game-app:latest
+        image: red-api:latest
         resources:
           limits:
             memory: "128Mi"
